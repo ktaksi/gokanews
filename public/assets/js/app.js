@@ -1,0 +1,1 @@
+document.querySelectorAll('img').forEach(i=>i.loading='lazy');

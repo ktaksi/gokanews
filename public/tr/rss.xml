@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>GokaNews - Türkçe</title>
+  <link>https://gokanews.com/tr/</link>
+  <description>Son dakika haberleri</description>
+  <item>
+    <title>Örnek Türkiye Haberi</title>
+    <link>https://gokanews.com/tr/haber/turkiye/2025/10/ornek-turkiye-haberi/</link>
+    <description>Bu bir örnek Türkiye haberidir.</description>
+  </item>
+</channel>
+</rss>

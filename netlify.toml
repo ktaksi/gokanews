@@ -1,0 +1,19 @@
+[build]
+publish = "public"
+[build.environment]
+TZ = "UTC"
+[[headers]]
+for = "/*.html"
+[headers.values]
+Cache-Control = "public, max-age=60"
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+for = "/*"
+[headers.values]
+Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"

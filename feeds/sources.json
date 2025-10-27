@@ -1,0 +1,20 @@
+{
+"tr": {
+"son-dakika": ["GOOGLE_NEWS:son dakika Türkiye"],
+"turkiye": ["RSS:https://www.aa.com.tr/tr/rss/default?cat=guncel"],
+"dunya": ["GOOGLE_NEWS:dünya haberleri"],
+"ekonomi": ["RSS:https://www.bloomberght.com/rss"],
+"teknoloji": ["GOOGLE_NEWS:teknoloji haberleri"],
+"spor": ["GOOGLE_NEWS:spor haberleri"],
+"kultur-sanat": ["GOOGLE_NEWS:kültür sanat"]
+},
+"en": {
+"breaking": ["GOOGLE_NEWS:breaking news"],
+"turkey": ["GOOGLE_NEWS:Turkey news"],
+"world": ["RSS:https://rss.cnn.com/rss/edition_world.rss"],
+"business": ["RSS:https://feeds.bbci.co.uk/news/business/rss.xml"],
+"tech": ["RSS:https://www.theverge.com/rss/index.xml"],
+"sports": ["RSS:https://www.espn.com/espn/rss/news"],
+"culture": ["GOOGLE_NEWS:culture news"]
+}
+}
