@@ -6,10 +6,10 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{ meta_description }}">
     <link rel="canonical" href="{{ canonical_url }}">
-    {{#each hreflangs}}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}">
-    {{/each}}
-    <link rel="alternate" hreflang="x-default" href="{{ x_default_url }}">
+
+    <!-- Hreflang links will be dynamically inserted here -->
+    {{{ hreflang_links }}}
+
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- Fonts -->
@@ -18,32 +18,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
 
     <!-- JSON-LD Schemas -->
-    <script type="application/ld+json">
-    {
-        "@context":"https://schema.org","@type":"WebSite",
-        "url":"https://gokanews.com","name":"GokaNews",
-        "potentialAction":{"@type":"SearchAction","target":"https://gokanews.com/search?q={query}","query-input":"required name=query"}
-    }
-    </script>
-    {{#if breadcrumb_ld}}
-    <script type="application/ld+json">{{{ breadcrumb_ld }}}</script>
-    {{/if}}
-    {{#if article_ld}}
-    <script type="application/ld+json">{{{ article_ld }}}</script>
-    {{/if}}
+    {{{ website_schema }}}
+    {{{ breadcrumb_schema }}}
+    {{{ article_schema }}}
 </head>
 <body>
     <div class="gn-top-bar">
         <div class="gn-container top-bar-flex">
-            <div id="finance-ticker">
-                <span>Yükleniyor...</span>
-            </div>
+            <div id="finance-ticker"><span>Yükleniyor...</span></div>
             <div class="lang-selector">
-                <a href="/tr/">🇹🇷 TR</a>
-                <a href="/en/">🇬🇧 EN</a>
-                <a href="/de/">🇩🇪 DE</a>
-                <a href="/es/">🇪🇸 ES</a>
-                <!-- Diğer diller buraya eklenecek -->
+                <!-- Language links will be dynamically inserted here -->
+                {{{ language_switcher_short }}}
             </div>
         </div>
     </div>
@@ -53,7 +38,8 @@
             <img src="/assets/img/logo.svg" alt="GokaNews Logo">
         </a>
         <nav class="gn-nav">
-            {{{ nav }}}
+            <!-- Navigation links for the current language will be dynamically inserted here -->
+            {{{ category_navigation }}}
         </nav>
     </header>
 
@@ -64,20 +50,20 @@
     <footer class="gn-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>GokaNews</h4>
-                <a href="/{{lang}}/about/">About Us</a>
-                <a href="/{{lang}}/editorial-principles/">Editorial Principles</a>
-                <a href="/{{lang}}/contact/">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/{{lang}}/privacy/">Privacy Policy</a>
-                <a href="/{{lang}}/cookie-policy/">Cookie Policy</a>
-                <a href="/{{lang}}/imprint/">Imprint</a>
-            </div>
-            <div class="footer-col">
-                <h4>Categories</h4>
+                <h4>Kategoriler</h4>
+                <!-- Category links for the current language -->
                 {{{ footer_category_links }}}
+            </div>
+            <div class="footer-col">
+                <h4>GokaNews Diller</h4>
+                <!-- Links to all other languages -->
+                {{{ footer_language_links }}}
+            </div>
+            <div class="footer-col">
+                <h4>Yasal</h4>
+                <a href="/{{lang}}/hakkimizda/">Hakkımızda</a>
+                <a href="/{{lang}}/kunye/">Künye</a>
+                <a href="/{{lang}}/gizlilik/">Gizlilik Politikası</a>
             </div>
             <div class="footer-col">
                 <p>&copy; 2025 Metagoria E-Ticaret Danışmanlık ve Dış Ticaret Ltd. Şti.</p>
