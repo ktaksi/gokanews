@@ -1,10 +1,26 @@
+{{#if hero_story}}
+<div class="hero">
+    <a href="{{hero_story.url}}" class="card">
+        <img src="{{hero_story.image_url}}" alt="{{hero_story.title}}">
+        <div class="card-content">
+            <h3>{{hero_story.title}}</h3>
+            <p class="excerpt">{{hero_story.excerpt}}</p>
+            <span class="source">{{hero_story.source}} — {{hero_story.date_local}}</span>
+        </div>
+    </a>
+</div>
+{{/if}}
+
+<h2 class="category-title" style="margin-top: 32px;">Latest News</h2>
 <div class="grid">
-{{#each top_stories}}
+{{#each articles}}
     <a href="{{url}}" class="card">
         <img src="{{image_url}}" alt="{{title}}">
-        <h3>{{title}}</h3>
-        <p class="excerpt">{{excerpt}}</p>
-        <span class="source">{{source}} — {{date_local}}</span>
+        <div class="card-content">
+            <h3>{{title}}</h3>
+            <p class="excerpt">{{excerpt}}</p>
+            <span class="source">{{source}} — {{date_local}}</span>
+        </div>
     </a>
 {{/each}}
 </div>

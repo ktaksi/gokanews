@@ -7,24 +7,72 @@
     <meta name="description" content="Türkiye ve dünyadan en son haberler.">
     <link rel="canonical" href="https://gokanews.com/tr/">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="gn-header">
-        <a href="/tr/"><img src="/assets/img/logo.svg" alt="GokaNews Logo"></a>
+        <a href="/tr/" class="logo"><img src="/assets/img/logo.svg" alt="GokaNews Logo"></a>
         <nav class="gn-nav">
             <a href="/tr/haber/son-dakika/">Son Dakika</a>
             <a href="/tr/haber/turkiye/">Türkiye</a>
+            <a href="/tr/haber/dunya/">Dünya</a>
+            <a href="/tr/haber/ekonomi/">Ekonomi</a>
         </nav>
+        <div></div>
     </header>
     <main class="gn-container">
-        <div class="grid">
-            <a href="/tr/haber/turkiye/2025/10/ornek-turkiye-haberi/" class="card">
-                <img src="/assets/img/placeholder-16x9.jpg" alt="Örnek Türkiye Haberi">
-                <h3>Örnek Türkiye Haberi</h3>
-                <p class="excerpt">Bu bir örnek Türkiye haberidir.</p>
+        <!-- Hero Story -->
+        <a href="/tr/haber/turkiye/2025/10/ornek-turkiye-haberi/" class="card">
+            <img src="/assets/img/placeholder-16x9.jpg" alt="Örnek Türkiye Haberi">
+            <div class="card-content">
+                <h3>Manşet: Örnek Türkiye Haberi</h3>
+                <p class="excerpt">Bu, ana sayfada öne çıkan manşet haberdir. Daha fazla dikkat çekmek için daha büyük bir sunuma sahiptir.</p>
                 <span class="source">GokaNews AI — 27 Ekim 2025, 12:00 TRT</span>
+            </div>
+        </a>
+
+        <h2 style="margin-top: 32px; font-family: 'Georgia', serif;">Son Haberler</h2>
+        <div class="grid">
+            <!-- Grid Article 1 -->
+            <a href="/tr/haber/ekonomi/2025/10/ornek-ekonomi-haberi/" class="card">
+                <img src="/assets/img/placeholder-16x9.jpg" alt="Örnek Ekonomi Haberi">
+                <div class="card-content">
+                    <h3>Örnek Ekonomi Haberi</h3>
+                    <p class="excerpt">Ekonomi dünyasından önemli gelişmeler.</p>
+                    <span class="source">GokaNews AI — 27 Ekim 2025</span>
+                </div>
+            </a>
+            <!-- Grid Article 2 -->
+            <a href="/tr/haber/spor/2025/10/ornek-spor-haberi/" class="card">
+                <img src="/assets/img/placeholder-16x9.jpg" alt="Örnek Spor Haberi">
+                <div class="card-content">
+                    <h3>Örnek Spor Haberi</h3>
+                    <p class="excerpt">Spor gündeminden başlıklar.</p>
+                    <span class="source">GokaNews AI — 27 Ekim 2025</span>
+                </div>
+            </a>
+            <!-- Grid Article 3 -->
+            <a href="/tr/haber/teknoloji/2025/10/ornek-teknoloji-haberi/" class="card">
+                <img src="/assets/img/placeholder-16x9.jpg" alt="Örnek Teknoloji Haberi">
+                <div class="card-content">
+                    <h3>Örnek Teknoloji Haberi</h3>
+                    <p class="excerpt">Teknoloji alanındaki en son yenilikler.</p>
+                    <span class="source">GokaNews AI — 27 Ekim 2025</span>
+                </div>
             </a>
         </div>
     </main>
+    <footer class="gn-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>GokaNews</h4>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

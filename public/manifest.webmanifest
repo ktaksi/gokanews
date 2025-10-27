@@ -1,1 +1,15 @@
-{ "name":"GokaNews","short_name":"GokaNews","start_url":"/tr/","display":"standalone","background_color":"#ffffff","theme_color":"#E50914","icons":[{"src":"/apple-touch-icon.png","sizes":"180x180","type":"image/png"}] }
+{
+  "name": "GokaNews",
+  "short_name": "GokaNews",
+  "start_url": "/tr/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0A2A43",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
