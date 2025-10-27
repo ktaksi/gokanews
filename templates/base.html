@@ -33,6 +33,21 @@
     {{/if}}
 </head>
 <body>
+    <div class="gn-top-bar">
+        <div class="gn-container top-bar-flex">
+            <div id="finance-ticker">
+                <span>Yükleniyor...</span>
+            </div>
+            <div class="lang-selector">
+                <a href="/tr/">🇹🇷 TR</a>
+                <a href="/en/">🇬🇧 EN</a>
+                <a href="/de/">🇩🇪 DE</a>
+                <a href="/es/">🇪🇸 ES</a>
+                <!-- Diğer diller buraya eklenecek -->
+            </div>
+        </div>
+    </div>
+
     <header class="gn-header">
         <a href="/{{ lang }}/" class="logo">
             <img src="/assets/img/logo.svg" alt="GokaNews Logo">
@@ -40,9 +55,6 @@
         <nav class="gn-nav">
             {{{ nav }}}
         </nav>
-        <div class="lang-switcher">
-            {{{ lang_switcher }}}
-        </div>
     </header>
 
     <main class="gn-container">

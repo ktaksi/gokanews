@@ -264,3 +264,45 @@ h1, h2, h3, h4, h5, h6 {
     .post h1 { font-size: 2rem; }
     .post .body { font-size: 1rem; }
 }
+
+/* --- 8. Top Bar, Ticker & Language Selector --- */
+.gn-top-bar {
+    background-color: var(--brand);
+    color: var(--surface);
+    padding: var(--spacing-unit) 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.top-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#finance-ticker span {
+    margin-right: calc(var(--spacing-unit) * 3); /* 24px */
+}
+
+#finance-ticker .currency-up {
+    color: #4CAF50; /* Green for price up */
+}
+
+#finance-ticker .currency-down {
+    color: #F44336; /* Red for price down */
+}
+
+.lang-selector a {
+    color: var(--surface);
+    text-decoration: none;
+    margin-left: var(--spacing-unit); /* 8px */
+    padding: var(--spacing-unit);
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+}
+
+.lang-selector a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
