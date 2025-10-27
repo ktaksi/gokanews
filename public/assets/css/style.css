@@ -1,17 +1,258 @@
-:root{--brand:#E50914;--ink:#111418;--muted:#6B7280;--bg:#FFFFFF;--bg-alt:#F7F8FA;--radius:16px;--shadow:0 8px 24px rgba(0,0,0,.08)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Roboto,"Noto Sans","Noto Sans Arabic","Noto Sans SC",system-ui;line-height:1.5}
-.gn-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;display:flex;gap:16px;align-items:center;padding:12px 20px;z-index:10}
-.gn-header .logo img{height:36px}.gn-nav a{margin-right:12px;text-decoration:none;color:#222}
-.gn-container{max-width:1200px;margin:0 auto;padding:20px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.2s}
-.card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
-.card img{width:100%;aspect-ratio:16/9;object-fit:cover}
-.card h2,.card h3{margin:12px 12px 6px}.excerpt{margin:0 12px 12px;color:var(--muted)}.source{display:block;margin:0 12px 14px;font-size:.85rem;color:#666}
-.category-title{margin:8px 0 16px;font-size:1.6rem}
-.post h1{font-size:2.125rem;margin:8px 0 12px}.post figure{margin:12px 0}
-.post figure img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius)}
-.archive a{color:var(--brand);text-decoration:none}
-@media(prefers-color-scheme:dark){body{background:#0B0E12;color:#F3F4F6}.card{background:#0F1318}}
-[dir="rtl"] .gn-nav a{margin-left:12px;margin-right:0}
-:focus-visible{outline:2px solid color-mix(in srgb,var(--brand),transparent 40%);outline-offset:2px}
+/* GokaNews Professional Theme */
+
+/* --- 1. Design Tokens & Base --- */
+:root {
+    --brand: #0A2A43; /* Corporate Dark Blue */
+    --link-hover: #0056b3; /* A slightly lighter blue for hover */
+    --ink: #111418;      /* Primary Text */
+    --muted: #5A6470;    /* Muted Text (for dates, sources) */
+    --bg: #FFFFFF;        /* Main Background */
+    --bg-alt: #F4F6F8;   /* Alternate Background (for cards, sections) */
+    --border: #DEE3E8;   /* Subtle Borders */
+
+    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-head: 'Georgia', Cambria, "Times New Roman", Times, serif;
+
+    --radius: 4px; /* Sharper corners */
+    --shadow: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-hover: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 2. Layout & Structure --- */
+.gn-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.gn-header {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    z-index: 100;
+    height: 64px;
+}
+
+.gn-header .logo img {
+    height: 32px;
+    vertical-align: middle;
+}
+
+.gn-footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.footer-grid h4 {
+    color: var(--ink);
+    font-family: var(--font-head);
+}
+
+.footer-grid a {
+    color: var(--muted);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+.footer-grid a:hover {
+    color: var(--link-hover);
+}
+
+/* --- 3. Navigation --- */
+.gn-nav a {
+    margin: 0 12px;
+    padding: 8px 0;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.gn-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--brand);
+    transition: width 0.3s ease;
+}
+
+.gn-nav a:hover {
+    color: var(--brand);
+}
+
+.gn-nav a:hover::after {
+    width: 100%;
+}
+
+/* --- 4. Content & Cards --- */
+.grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-content {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+}
+
+.card .excerpt {
+    font-size: 0.95rem;
+    margin: 0 0 12px 0;
+    color: var(--muted);
+    flex-grow: 1;
+}
+
+.card .source {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+/* --- 5. Article Page --- */
+.post {
+    max-width: 72ch; /* Optimal reading width */
+    margin: 0 auto;
+}
+
+.post h1 {
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 16px 0;
+}
+
+.post .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+}
+
+.post figure {
+    margin: 24px 0;
+}
+.post figure img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+.post figure figcaption {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 8px;
+}
+
+.post .body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.post .body h2 {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+}
+
+/* --- 6. Dark Mode & RTL --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #0B0E12;
+        color: #F3F4F6;
+    }
+    .gn-header, .card {
+        background: #12161C;
+        border-color: #2D3748;
+    }
+    :root {
+        --ink: #F3F4F6;
+        --muted: #9CA3AF;
+        --bg: #0B0E12;
+        --bg-alt: #12161C;
+        --border: #2D3748;
+    }
+    .footer-grid a { color: #9CA3AF; }
+}
+
+[dir="rtl"] {
+    /* RTL specific adjustments can go here */
+}
+
+/* --- 7. Responsiveness --- */
+@media (max-width: 768px) {
+    .gn-nav {
+        display: none; /* Simple solution for now, could be a hamburger menu */
+    }
+    .post h1 { font-size: 2rem; }
+    .post .body { font-size: 1rem; }
+}

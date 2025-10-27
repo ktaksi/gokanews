@@ -1,6 +1,10 @@
 <article class="post">
     <h1>{{title}}</h1>
-    <div class="meta">{{date_local}} • {{read_time}} • {{source_line}}</div>
+    <div class="meta">
+        <span>{{date_local}}</span> •
+        <span>{{read_time}}</span> •
+        <span>{{source_line}}</span>
+    </div>
     <figure>
         <img src="{{image_url}}" alt="{{image_alt}}">
         <figcaption>{{image_caption}}</figcaption>
@@ -13,8 +17,8 @@
     </div>
 </article>
 
-<aside>
-    <h2>{{i18n.related}}</h2>
+<aside style="margin-top: 40px;">
+    <h2 class="category-title">{{i18n.related}}</h2>
     <div class="grid">
         {{{related_cards}}}
     </div>
