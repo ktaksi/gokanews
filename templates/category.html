@@ -1,0 +1,14 @@
+<h1 class="category-title">{{category_name}}</h1>
+
+<div class="grid">
+{{#each articles}}
+    <a href="{{url}}" class="card">
+        <img src="{{image_url}}" alt="{{title}}">
+        <h3>{{title}}</h3>
+        <p class="excerpt">{{excerpt}}</p>
+        <span class="source">{{source}} — {{date_local}}</span>
+    </a>
+{{/each}}
+</div>
+
+{{{pager}}}

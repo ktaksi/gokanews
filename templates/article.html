@@ -1,0 +1,21 @@
+<article class="post">
+    <h1>{{title}}</h1>
+    <div class="meta">{{date_local}} • {{read_time}} • {{source_line}}</div>
+    <figure>
+        <img src="{{image_url}}" alt="{{image_alt}}">
+        <figcaption>{{image_caption}}</figcaption>
+    </figure>
+    <div class="body">
+        {{{body_html}}}
+    </div>
+    <div class="archive">
+        <p>{{i18n.archive}}: <a href="{{archive_url}}">{{archive_url}}</a></p>
+    </div>
+</article>
+
+<aside>
+    <h2>{{i18n.related}}</h2>
+    <div class="grid">
+        {{{related_cards}}}
+    </div>
+</aside>

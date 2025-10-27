@@ -1,0 +1,24 @@
+name: Daily Netlify Build
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: UTC
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - name: Build (feeds -> pages)
+        run: node scripts/generate_from_feeds.js
+      - name: Commit & Push
+        run: |
+          git config user.name "GokaNews Bot"
+          git config user.email "bot@gokanews.com"
+          git add -A
+          git commit -m "chore: daily multilingual content build"
+          git push

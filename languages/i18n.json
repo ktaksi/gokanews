@@ -1,0 +1,10 @@
+{ "tr":{"related":"İlgili Haberler","archive":"Arşiv"},
+"en":{"related":"Related Articles","archive":"Archive"},
+"de":{"related":"Ähnliche Artikel","archive":"Archiv"},
+"fr":{"related":"Articles connexes","archive":"Archive"},
+"es":{"related":"Artículos relacionados","archive":"Archivo"},
+"it":{"related":"Articoli correlati","archive":"Archivio"},
+"pt":{"related":"Artigos relacionados","archive":"Arquivo"},
+"ru":{"related":"Похожие материалы","archive":"Архив"},
+"ar":{"related":"مقالات ذات صلة","archive":"الأرشيف"},
+"zh":{"related":"相关文章","archive":"存档"} }

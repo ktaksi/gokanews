@@ -1,0 +1,12 @@
+{
+"tr": ["son dakika", "haber", "son haberler"],
+"en": ["breaking news", "news", "latest news"],
+"de": ["Eilmeldung", "Nachrichten", "Aktuelle Nachrichten"],
+"fr": ["dernière minute", "actualités", "dernières actualités"],
+"es": ["última hora", "noticias", "últimas noticias"],
+"it": ["ultim'ora", "notizie", "ultime notizie"],
+"pt": ["últimas", "notícias", "últimas notícias"],
+"ru": ["срочные новости", "новости", "последние новости"],
+"ar": ["عاجل", "أخبار", "آخر الأخبار"],
+"zh": ["突发新闻", "新闻", "最新消息"]
+}

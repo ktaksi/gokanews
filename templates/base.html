@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {{#each hreflangs}}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}">
+    {{/each}}
+    <link rel="alternate" hreflang="x-default" href="{{ x_default_url }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Inter:wght@600;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org","@type":"WebSite",
+        "url":"https://gokanews.com","name":"GokaNews",
+        "potentialAction":{"@type":"SearchAction","target":"https://gokanews.com/search?q={query}","query-input":"required name=query"}
+    }
+    </script>
+    {{#if breadcrumb_ld}}
+    <script type="application/ld+json">{{{ breadcrumb_ld }}}</script>
+    {{/if}}
+    {{#if article_ld}}
+    <script type="application/ld+json">{{{ article_ld }}}</script>
+    {{/if}}
+</head>
+<body>
+    <header class="gn-header">
+        <div class="logo">
+            <a href="/{{ lang }}/"><img src="/assets/img/logo.svg" alt="GokaNews Logo"></a>
+        </div>
+        <nav class="gn-nav">
+            {{{ nav }}}
+        </nav>
+        <div class="lang-switcher">
+            {{{ lang_switcher }}}
+        </div>
+    </header>
+
+    <main class="gn-container">
+        {{{ content }}}
+    </main>
+
+    <footer>
+        <p>© 2025 Metagoria E-Ticaret Danışmanlık ve Dış Ticaret Ltd. Şti. — İstanbul, Türkiye</p>
+        <p>Contact: newsroom@gokanews.com — +90 530 456 1765</p>
+        <script type="application/ld+json">
+        {
+            "@context":"https://schema.org","@type":"Organization",
+            "name":"Metagoria E-Ticaret Danışmanlık ve Dış Ticaret Ltd. Şti.",
+            "url":"https://gokanews.com","logo":"https://gokanews.com/assets/img/logo.svg",
+            "contactPoint":[{"@type":"ContactPoint","email":"newsroom@gokanews.com","telephone":"+90 530 456 1765","contactType":"customer service","areaServed":"TR"}]
+        }
+        </script>
+    </footer>
+
+    <script src="/assets/js/app.js"></script>
+    {{#if plausible_domain}}
+    <script defer data-domain="{{ plausible_domain }}" src="https://plausible.io/js/script.js"></script>
+    {{/if}}
+    {{#if ga4_id}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga4_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ ga4_id }}');
+    </script>
+    {{/if}}
+</body>
+</html>
